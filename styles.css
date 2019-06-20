@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
+    font-family: 'Source Code Pro', monospace;
+    overflow: auto;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+  
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('./imgs/bg-comp-matrix.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.header {
+    flex-basis: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #FFF;
+    position: relative;
+}
+
+.social_container {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+}
+
+.social_icon {
+    width: 3rem;
+    height: 3rem;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: #FFF;
+    margin: 1rem;
+}
+
+.social_icon:hover {
+    background-color: #006600;
+}
+
+.github {
+    -webkit-mask: url('imgs/github.svg') no-repeat 100% 100%;
+    mask: url('imgs/github.svg') no-repeat 100% 100%;
+}
+
+.linkedin {
+    -webkit-mask: url('imgs/linkedin.svg') no-repeat 100% 100%;
+    mask: url('imgs/linkedin.svg') no-repeat 100% 100%;
+}
+
+.toggle_input {
+    display: none;
+}
+
+.nav_label {
+    cursor: pointer;
+}
+
+.toggle_input:checked ~ .navbar {
+    height: 100%;
+    transition: height .5s ease-out;
+}
+
+.toggle_input:checked ~ .navbar > .nav_list {
+    border-bottom: 0.5px solid #FFF;
+}
+
+.nav_icon {
+    height: 100%;
+    width: 3rem;
+    cursor: pointer;
+    -webkit-mask: url('imgs/iconfinder_menu6_216511.svg') no-repeat 100% 100%;
+    mask: url('imgs/iconfinder_menu6_216511.svg') no-repeat 100% 100%;
+    -webkit-mask-size: 100%;
+    mask-size: cover;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: #FFF;
+    margin-left: 1rem;
+}
+
+.navbar {
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transition: height .5s ease-out;
+}
+
+.nav_list {
+    list-style-type: none;
+    width: 100%;
+}
+
+.nav_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    font-size: 2rem;
+    background-color: #FFF;
+    opacity: 0.7;
+    margin: 0.2rem;
+}
+
+.nav_item > a {
+    text-decoration: none;
+    color: green;
+    opacity: 1;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 83%;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    width: 50%;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.avatar {
+    src: url('./imgs/avatar.jpg');
+    width: 20rem;
+    height: 20rem;   
+    border-radius: 50%;
+    float: right;
+    border: 0.5px solid  #006600;
+}
+
+.intro {
+    width: 50%;
+    color: #FFF;
+    word-wrap: wrap;
+    font-size: 2rem;
+    border-bottom: 0.5px solid #FFF;
+    border-top: 0.5px solid #FFF;
+    padding: 1rem; 
+    text-indent: 1rem;
+    word-wrap: break-word;
+}
+
+.footer {   
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-basis: 10%;
+    align-items: center;
+    height: 10rem;
+    width: 100%;
+    font-size: 2rem;
+    color: #FFF;
+    border-top: 0.5px solid #FFF;
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .nav_label {
+        display: none;
+    }
+ 
+    .navbar {
+        position: static;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .nav_list {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        border-bottom: none;
+
+    }
+
+    .nav_item {
+        background-color: transparent;
+        opacity: 1;
+        width: auto;
+        margin: 1rem;
+        padding: 0.5rem 1rem 0 1rem;
+    }
+
+    .nav_item:hover {
+        background-color: #FFF;
+        opacity: 0.7;
+        border-radius: 1rem;
+        transition: background-color .2s ease;
+        /* color: #006600; */
+    }
+
+    .nav_item:hover > a {
+        color: #006600;
+    }
+
+    .nav_item > a {
+        color: #FFF;
+    }
+
+}
