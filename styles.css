@@ -5,11 +5,10 @@
 }
 
 html {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     font-size: 62.5%;
     font-family: 'Source Code Pro', monospace;
-    overflow: auto;
 }
 
 body {
@@ -52,14 +51,15 @@ body {
     -webkit-mask-position: center;
     background-color: #FFF;
     margin: 1rem;
+
 }
 
 .social_icon:hover {
-    background-color: #006600;
+    background-color: #8821aa;
 }
 
 .github {
-    -webkit-mask: url('imgs/github.svg') no-repeat 100% 100%;
+    -webkit-mask: url('imgs/github.svg') no-repeat 100% 100%; 
     mask: url('imgs/github.svg') no-repeat 100% 100%;
 }
 
@@ -151,6 +151,7 @@ body {
 .avatar {
     src: url('./imgs/avatar.jpg');
     width: 20rem;
+    min-width: 10rem;
     height: 20rem;   
     border-radius: 50%;
     float: right;
@@ -159,14 +160,16 @@ body {
 
 .intro {
     width: 50%;
+    height: auto;
+    max-height: 50%;
+    overflow: hidden;
     color: #FFF;
-    word-wrap: wrap;
     font-size: 2rem;
     border-bottom: 0.5px solid #FFF;
     border-top: 0.5px solid #FFF;
     padding: 1rem; 
     text-indent: 1rem;
-    word-wrap: break-word;
+
 }
 
 .footer {   
@@ -180,6 +183,8 @@ body {
     font-size: 2rem;
     color: #FFF;
     border-top: 0.5px solid #FFF;
+    position: fixed;
+    bottom: 0;
 
 }
 
@@ -203,23 +208,24 @@ body {
         justify-content: flex-start;
         align-items: flex-end;
         border-bottom: none;
-
     }
 
     .nav_item {
+        
         background-color: transparent;
         opacity: 1;
         width: auto;
         margin: 1rem;
-        padding: 0.5rem 1rem 0 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .nav_item:hover {
         background-color: #FFF;
         opacity: 0.7;
         border-radius: 1rem;
+        margin: 0.9rem;
+        border: 1px solid #006600;
         transition: background-color .2s ease;
-        /* color: #006600; */
     }
 
     .nav_item:hover > a {
@@ -229,5 +235,4 @@ body {
     .nav_item > a {
         color: #FFF;
     }
-
 }
